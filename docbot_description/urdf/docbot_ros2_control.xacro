@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<robot name="docbot" xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:include filename="$(find docbot_description)/urdf/properties.xacro"/>
+    <ros2_control type="system" name="RobotSystem">
+        <hardware>
+            <plugin>docbot_firmware/DocbotInterface</plugin>
+            <param name="port">/dev/ttyACM0</param>
+            <param name="wheel_radius">${wheel_radius}</param>
+        </hardware>
+        <joint name="wheel_right_joint">
+            <commad_interface name="velocity">
+            <!-- 초당 -1~1 라디안으로 제한한다. -->
+                <param name="min">-1</param>
+                <param name="max">1</param>
+            </commad_interface>
+            
+            <!-- 하드웨어의 상태를 읽어온다. -->
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+
+        <joint name="wheel_left_joint">
+            <commad_interface name="velocity">
+            <!-- 초당 -1~1 라디안으로 제한한다. -->
+                <param name="min">-1</param>
+                <param name="max">1</param>
+            </commad_interface>
+
+            <!-- 하드웨어의 상태를 읽어온다. -->
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+
+
+    </ros2_control>
+</robot>
