@@ -1,0 +1,60 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100 # 업데이트 주기 30Hz
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    docbot_controller:
+      type: diff_drive_controller/DiffDriveController
+
+
+docbot_controller:
+  ros__parameters:
+    type: diff_drive_controller/DiffDriveController
+    left_wheel_names: ['wheel_left_joint']
+    right_wheel_names: ['wheel_right_joint']
+
+    publish_rate: 50.0
+    base_frame_id: base_footprint
+
+    wheel_separation : 0.133 # (base_width/2 + wheel_ygap) * 2
+    wheel_radius : 0.033
+    use_stamped_vel: true
+
+    # 제한된 속도 게시 (제한 속도 이상이면 토픽을 보내지 않는다.)
+    publish_limited_velocity: true
+    # 휠 데이터 게시
+    publish_wheel_data: true
+    # TF에 직접 게시 여부
+    enable_odom_tf: true
+
+    wheel_separation_multiplier: 1.0
+    left_wheel_radius_multiplier: 1.0
+    right_wheel_radius_multiplier: 1.0
+
+    # 속도 및 가속도 제한
+    # min_*이 지정되지 않을 때마다 기본값은 -max_입니다.*
+
+    linear:
+      x:
+        has_velocity_limits : true
+        max_velocity        : 1.0 ## 단위 m/s
+        min_velocity        : -0.5
+        has_acceleration_limits: true
+        max_acceleration    : 0.8 ## 단위 m/s^2
+        min_acceleration    : -0.4
+        has_jerk_limits     : false
+        max_jerk               : 5.0  # m/s^3
+        
+    angular:
+      z:
+        has_velocity_limits    : true
+        max_velocity           : 8.5  # rad/s
+        min_velocity           : -8.5  # rad/s
+        has_acceleration_limits: true
+        max_acceleration       : 5.0  # rad/s^2
+        min_acceleration       : -5.0   # rad/s^2
+        has_jerk_limits        : false
+        max_jerk               : 2.5  # rad/s^3
+

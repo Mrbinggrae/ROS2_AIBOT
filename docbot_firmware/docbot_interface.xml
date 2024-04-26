@@ -1,0 +1,10 @@
+<library path="docbot_firmware">
+    <class 
+        name="docbot_firmware/DocbotInterface"
+        type="docbot_firmware::DocbotInterface"
+        base_class_type="hardware_interface::SystemInterface">
+        <description>
+            Docbot hardware interface
+        </description>
+    </class>
+</library>
