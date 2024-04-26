@@ -17,10 +17,10 @@ Ubunutu22.04, ROS2 Humble, Nav2, Ros_Control, Arduino IDE
 Raspberry Pi 4B+, Arduino Uno, Ydlidar x4 Pro, L298N module, DC Motor, Encoder
 
 ## 로봇 이미지
-![field](https://github.com/Mrbinggrae/ros_rccar/blob/main/images/%ED%9B%84%EC%86%A1%EB%A1%9C%EB%B4%87.jpg)
+![field](https://github.com/Mrbinggrae/ros_rccar/blob/main/images/후송로봇.jpg)
 
 ## 필드 이미지
-![field](https://github.com/Mrbinggrae/ros_rccar/blob/bc913bfa897627aa02213c14ac80c0dc589e0fef/images/Field.jpg)
+![field](https://github.com/Mrbinggrae/ROS2_AIBOT/tree/main/images/Field.jpg)
 
 ## 시연 설명
 1. RIVZ2에서 Mapping된 지도에 Waypoint를 설정하면 로봇이 이동하며 부상당한 아군을 후송한 뒤 베이스로 복귀합니다.
