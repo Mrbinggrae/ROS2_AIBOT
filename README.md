@@ -61,7 +61,7 @@ Raspberry Pi 4B+, Arduino Uno, Ydlidar x4 Pro, L298N module, DC Motor, Encoder
 
   - docbot_flyup.launch.py 실팽 파일에 로봇의 Controller, Joystick, Hardware_interface의 실행 파일이 하나의 명령어로 실행되도록 만들었습니다.
     
-    [docbot_flyup.launch 링크](https://github.com/Mrbinggrae/ros_rccar/blob/main/docbot_bringup/launch/docbot_flyup.launch.py)
+    [docbot_flyup.launch 링크](https://github.com/Mrbinggrae/ROS2_AIBOT/blob/main/docbot_bringup/launch/docbot_flyup.launch.py)
 
 ### 3. Slam - 지도 제작
   - toolbox 패키지에서 mapper_params_online_async.yaml 파일을 복사했습니다.
